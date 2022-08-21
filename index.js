@@ -56,4 +56,4 @@ bot.on("messageCreate", (message) => {
     
 });
 
-bot.login(`OTY0MTA2MzIzMTUzMjg1MTYw.GL0YxC.fso_uIiVglqYhDJeLRB95h0aJRdQiJKEaDULN8`)
+bot.login(``)
