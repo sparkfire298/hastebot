@@ -6,7 +6,7 @@ Discord bot for uploading text pastes to Hastebin
 - Download the repository, unzip it and open a terminal in the folder
 (VS Code, right click on the folder and click Open with Code)
 - Run `npm install discord.js@13 hastebin.js`
-- Go to the bottom line and put a token in `bot.login()` (Like `bot.login(\`Token\`)`
+- Go to the bottom line and put a token in `bot.login()` (Like bot.login(`Token`)
 - Start the bot with `node index.js` (Or whatever you renamed the file to)
 
 
