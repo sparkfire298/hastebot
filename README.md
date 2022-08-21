@@ -11,7 +11,7 @@ Discord bot for uploading text pastes to Hastebin
 
 
 # Disclaimers
-- This is not intended for self-hosting, and the original can be found [here]() (I will not help you with any issues you may encounter with a self-hosted version)
+- This is not intended for self-hosting, and the original can be found [here](https://discord.com/api/oauth2/authorize?client_id=964106323153285160&permissions=18432&scope=bot) (I will not help you with any issues you may encounter with a self-hosted version)
 - This bot is not for online editors (replit, glitch, etc) and you will need to secure your token yourself (contrary to the above notice)
 - This bot isn't designed to work with Discord.js V14 and I will not adjust it for you (Make sure to add `@13` at the end when installing it)
 
