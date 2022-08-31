@@ -38,7 +38,7 @@ bot.on('interactionCreate', async interaction => {
         .addField("help", "This command!")
         .addField("info", "View info on the bot")
         .setImage("https://i.imgur.com/B2EW9lm.gif")
-        .setFooter("I support both slash and text commands!\nMade by sparkfire298#2981")
+        .setFooter("As of 31/08 the bot now only supports slash commands.")
         interaction.reply({ embeds: [embed], ephemeral: true });
     }
     if (commandName === "ping") interaction.reply({ content: `${bot.ws.ping} ms`, ephemeral: true });
