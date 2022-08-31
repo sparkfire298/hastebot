@@ -10,53 +10,13 @@ console.log('[HASTEBOT] Hastebin client has started')
 
 
 bot.on("ready", () => { 
-    bot.user.setActivity("ha+help - hastebot.sparkfire298.com");
+    bot.user.setActivity("/help");
     console.log('[HASTEBOT] Ready!')
 });
 
-const prefix = "ha+";
-const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-bot.on("messageCreate", (message) => {
-          if (!message.guild.me.permissionsIn(message.channel).has("SEND_MESSAGES")) return;
-    if (message.content === "<@964106323153285160>" || message.content === "<@!964106323153285160>") return message.reply("My prefix is `haste ` (Include a space at end)")
-    
-    if (message.author.bot) return; // Prevents bots from using it, also known as "botception"
 
-    	const prefixRegex = new RegExp(`^(<@!?${bot.user.id}>|${escapeRegex(prefix)})\\s*`);
-	if (!prefixRegex.test(message.content)) return;
 
-	const [, matchedPrefix] = message.content.match(prefixRegex);
-	const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
-	const command = args.shift().toLowerCase();
-
-    if (command === "help") {
-        const embed = new MessageEmbed()
-        .setTitle("Hastebot")
-        .setColor("042c35")
-        .setDescription("Hastebot is a bot for uploading text (in any size) to [**Hastebin**](https://hastebin.com)")
-        .addField("paste", "Paste text to Hastebin")
-        .addField("ping", "Ping the bot")
-        .addField("help", "This command!")
-        .addField("info", "View info on the bot")
-        .setImage("https://i.imgur.com/B2EW9lm.gif")
-        .setFooter("I support both slash and text commands!\nMade by sparkfire298#2981")
-        message.reply({ embeds: [embed] });
-    }
-
-    if (command === "paste") {
-        const text = args.slice(0).join(" ")
-        if (!text) return message.reply(":x: Please provide some text!")
-        const link = haste.post(text).then(link => message.reply(`:white_check_mark: Your paste has been uploaded and can be found at **<${link}>**`));
-
-    }
-
-    if (command === "ping") message.reply(`Pong!\n${bot.ws.ping} ms`)
-    if (command === "invite") message.reply("You can invite me at https://discord.com/api/oauth2/authorize?client_id=964106323153285160&permissions=18432&scope=bot")
-    if (command === "info") message.reply("Hastebot is a bot for uploading text (in any size) to Hastebin\n\nMade by **sparkfire298#2981** in Discord.js V13 using the Hastebin.js NPM package.\n\nSource: <https://github.com/sparkfire298/hastebot>")
-
-    
-});
 
 bot.on('interactionCreate', async interaction => {
 	if (!interaction.isCommand()) return;
@@ -93,4 +53,4 @@ let seconds = Math.floor(bot.uptime / 1000) % 60;
     }
     
 });
-bot.login(`token`)
+bot.login()
